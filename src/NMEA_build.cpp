@@ -571,7 +571,8 @@ char *Adafruit_GPS::build(char *nmea, const char *thisSource,
     if (nmeaWithCRLF) {
       strcpy(nmeaWithCRLF, nmea);   // Copy original string
       strcat(nmeaWithCRLF, "\r\n"); // Append \r\n
-      return nmeaWithCRLF;          // return pointer to finished product
+      strcpy(nmea, nmeaWithCRLF);   // Copy back to original buffer
+      free(nmeaWithCRLF);           // Free the allocated memory
     }
   }
   return nmea; // return pointer to finished product
