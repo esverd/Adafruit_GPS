@@ -57,9 +57,9 @@
   3 ///< maximum length of a source ID name, including terminating 0
 
 #include "Arduino.h"
-#ifdef USE_SW_SERIAL
-// #include <SoftwareSerial.h>
-#endif
+// #ifdef USE_SW_SERIAL
+#include <SoftwareSerial.h>
+// #endif
 #include <Adafruit_PMTK.h>
 #include <NMEA_data.h>
 #include <SPI.h>
